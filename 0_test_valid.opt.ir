@@ -1,0 +1,8 @@
+package my_package
+
+file_number 1 "./0_test.cc"
+
+top fn add3(ipt: bits[32] id=1) -> bits[32] {
+  literal.2: bits[32] = literal(value=3, id=2, pos=[(1,2,23)])
+  ret add.3: bits[32] = add(ipt, literal.2, id=3, pos=[(1,2,23)])
+}
