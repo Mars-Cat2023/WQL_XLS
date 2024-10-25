@@ -53,3 +53,6 @@ else
     echo "Error: Unknown command '$1'. Use 'build' or 'clean'."
     exit 1
 fi
+
+unset RES
+unset FILE_NAME
