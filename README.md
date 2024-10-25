@@ -20,6 +20,21 @@ For example:
 ```
 sudo apt update
 sudo apt install -y build-essential g++ gcc clang llvm libz3-dev python3
-sudo apt-get install libgtest-dev libgmock-dev
 bazel build -c opt xls/...
+```
+
+For using Google Test framework (gMock and gTest) (Optional)
+```
+sudo apt-get install libgtest-dev libgmock-dev
+```
+
+For using Google Abseil (Optional)
+(May Running under ./OpenLLM-XLS/)
+```
+git clone https://github.com/abseil/abseil-cpp.git
+cd abseil-cpp
+mkdir build
+cd build
+cmake ..
+make
 ```
