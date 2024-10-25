@@ -37,7 +37,7 @@ if [ "$1" == "build" ]; then
         --generator=combinational \
         --delay_model="unit" \
         --output_verilog_path="${RES}/${FILE_NAME}_comb.v" \
-        --module_name=${FILE_NAME}_pipeline \
+        --module_name=${FILE_NAME}_comb \
         --top=Run
 
     # Display the contents of the generated Verilog file
