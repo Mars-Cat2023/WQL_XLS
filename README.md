@@ -3,7 +3,7 @@
 ## Step 0
 
 **First, make sure that you have at least** `35 GB` **memory space available on your system!**  
-&emsp; FYR: The hidden `~/.cache/bazel/_bazel_<username>/<temp_number>/` folder created by `bazel` contains `27.1 GB (1,208,354 files)`.
+&emsp; FYR: The default hidden `~/.cache/bazel/_bazel_<username>/<temp_number>/` folder created by `bazel` contains `27.1 GB (1,208,354 files)`.
 
 Then, run the following command to set up your OpenLLM-XLS:
 (The bazel build command will take around 90 minutes on WSL-Ubuntu 20.04.6.)
