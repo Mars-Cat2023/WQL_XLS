@@ -23,7 +23,7 @@ if [ "$1" == "build" ]; then
     ${BAZEL_BIN}/xls/contrib/xlscc/xlscc "${RES}/${FILE_NAME}.cc" > "${RES}/${FILE_NAME}.ir"
     ${BAZEL_BIN}/xls/tools/opt_main "${RES}/${FILE_NAME}.ir" > "${RES}/${FILE_NAME}.opt.ir"
 
-    ${BAZEL_BIN}/xls/tools/codegen_main "${RES}/${FILE_NAME}.ir" \
+    ${BAZEL_BIN}/xls/tools/codegen_main "${RES}/${FILE_NAME}.opt.ir" \
         --generator=pipeline \
         --delay_model="asap7" \
         --output_verilog_path="${RES}/${FILE_NAME}_pipeline.v" \
@@ -33,7 +33,7 @@ if [ "$1" == "build" ]; then
         --flop_inputs=true \
         --flop_outputs=true
 
-    ${BAZEL_BIN}/xls/tools/codegen_main "${RES}/${FILE_NAME}.ir" \
+    ${BAZEL_BIN}/xls/tools/codegen_main "${RES}/${FILE_NAME}.opt.ir" \
         --generator=combinational \
         --delay_model="unit" \
         --output_verilog_path="${RES}/${FILE_NAME}_comb.v" \
