@@ -19,6 +19,6 @@ please double check that you have all the dependencies ready and run this 'bazel
 For example:
 ```
 sudo apt update
-sudo apt install -y build-essential g++ gcc clang llvm libstdc++-dev libz3-dev python3 
+sudo apt install -y build-essential g++ gcc clang llvm libz3-dev python3 
 bazel build -c opt xls/...
 ```
