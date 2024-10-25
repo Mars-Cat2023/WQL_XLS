@@ -1,0 +1,29 @@
+package my_package
+
+file_number 1 "././xls_results/case3_dot_product/dot_10.cc"
+
+top fn Run(this: ((), (), ()) id=1, TestBlock__A_op0: bits[32] id=23, TestBlock__B_op0: bits[32] id=25, TestBlock__A_op1: bits[32] id=44, TestBlock__B_op1: bits[32] id=47, TestBlock__A_op2: bits[32] id=70, TestBlock__B_op2: bits[32] id=73, TestBlock__A_op3: bits[32] id=96, TestBlock__B_op3: bits[32] id=99, TestBlock__A_op4: bits[32] id=122, TestBlock__B_op4: bits[32] id=125, TestBlock__A_op5: bits[32] id=148, TestBlock__B_op5: bits[32] id=151, TestBlock__A_op6: bits[32] id=174, TestBlock__B_op6: bits[32] id=177, TestBlock__A_op7: bits[32] id=200, TestBlock__B_op7: bits[32] id=203, TestBlock__A_op8: bits[32] id=226, TestBlock__B_op8: bits[32] id=229, TestBlock__A_op9: bits[32] id=252, TestBlock__B_op9: bits[32] id=255) -> (((), (), ()), bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], (bits[32], bits[1])) {
+  smul.281: bits[32] = smul(TestBlock__A_op0, TestBlock__B_op0, id=281, pos=[(1,26,13)])
+  smul.300: bits[32] = smul(TestBlock__A_op1, TestBlock__B_op1, id=300, pos=[(1,26,13)])
+  smul.322: bits[32] = smul(TestBlock__A_op2, TestBlock__B_op2, id=322, pos=[(1,26,13)])
+  smul.344: bits[32] = smul(TestBlock__A_op3, TestBlock__B_op3, id=344, pos=[(1,26,13)])
+  add.832: bits[32] = add(smul.281, smul.300, id=832, pos=[(1,26,13)])
+  add.833: bits[32] = add(smul.322, smul.344, id=833, pos=[(1,26,13)])
+  smul.366: bits[32] = smul(TestBlock__A_op4, TestBlock__B_op4, id=366, pos=[(1,26,13)])
+  smul.388: bits[32] = smul(TestBlock__A_op5, TestBlock__B_op5, id=388, pos=[(1,26,13)])
+  smul.410: bits[32] = smul(TestBlock__A_op6, TestBlock__B_op6, id=410, pos=[(1,26,13)])
+  smul.432: bits[32] = smul(TestBlock__A_op7, TestBlock__B_op7, id=432, pos=[(1,26,13)])
+  smul.454: bits[32] = smul(TestBlock__A_op8, TestBlock__B_op8, id=454, pos=[(1,26,13)])
+  smul.476: bits[32] = smul(TestBlock__A_op9, TestBlock__B_op9, id=476, pos=[(1,26,13)])
+  add.834: bits[32] = add(add.832, add.833, id=834, pos=[(1,26,13)])
+  add.835: bits[32] = add(smul.366, smul.388, id=835, pos=[(1,26,13)])
+  add.836: bits[32] = add(smul.410, smul.432, id=836, pos=[(1,26,13)])
+  add.837: bits[32] = add(smul.454, smul.476, id=837, pos=[(1,26,13)])
+  add.838: bits[32] = add(add.834, add.835, id=838, pos=[(1,26,13)])
+  add.839: bits[32] = add(add.836, add.837, id=839, pos=[(1,26,13)])
+  add.840: bits[32] = add(add.838, add.839, id=840, pos=[(1,26,13)])
+  literal.496: bits[1] = literal(value=1, id=496, pos=[(1,28,9)])
+  literal.851: ((), (), ()) = literal(value=((), (), ()), id=851, pos=[(1,13,5)])
+  tuple.497: (bits[32], bits[1]) = tuple(add.840, literal.496, id=497, pos=[(1,28,9)])
+  ret tuple.498: (((), (), ()), bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], bits[1], (bits[32], bits[1])) = tuple(literal.851, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, literal.496, tuple.497, id=498, pos=[(1,13,5)])
+}
