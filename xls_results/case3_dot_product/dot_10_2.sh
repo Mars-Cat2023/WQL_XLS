@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# Set the environment variable RES
+# Set the environment variables
 export RES="./xls_results/case3_dot_product"
 export FILE_NAME="dot_10"
+export BAZEL_BIN="../xls/bazel-bin"
 
 # echo "Folder_Name = ${RES}"
 # echo "  File_Name = ${FILE_NAME}"
@@ -19,10 +20,10 @@ if [ "$1" == "build" ]; then
     echo "Building..."
 
     # Run the commands
-    ../xls/bazel-bin/xls/contrib/xlscc/xlscc "${RES}/${FILE_NAME}.cc" > "${RES}/${FILE_NAME}.ir"
-    ../xls/bazel-bin/xls/tools/opt_main "${RES}/${FILE_NAME}.ir" > "${RES}/${FILE_NAME}.opt.ir"
+    ${BAZEL_BIN}/xls/contrib/xlscc/xlscc "${RES}/${FILE_NAME}.cc" > "${RES}/${FILE_NAME}.ir"
+    ${BAZEL_BIN}/xls/tools/opt_main "${RES}/${FILE_NAME}.ir" > "${RES}/${FILE_NAME}.opt.ir"
 
-    ../xls/bazel-bin/xls/tools/codegen_main "${RES}/${FILE_NAME}.ir" \
+    ${BAZEL_BIN}/xls/tools/codegen_main "${RES}/${FILE_NAME}.ir" \
         --generator=pipeline \
         --delay_model="asap7" \
         --output_verilog_path="${RES}/${FILE_NAME}_pipeline.v" \
@@ -32,7 +33,7 @@ if [ "$1" == "build" ]; then
         --flop_inputs=true \
         --flop_outputs=true
 
-    ../xls/bazel-bin/xls/tools/codegen_main "${RES}/${FILE_NAME}.ir" \
+    ${BAZEL_BIN}/xls/tools/codegen_main "${RES}/${FILE_NAME}.ir" \
         --generator=combinational \
         --delay_model="unit" \
         --output_verilog_path="${RES}/${FILE_NAME}_comb.v" \
@@ -56,3 +57,4 @@ fi
 
 unset RES
 unset FILE_NAME
+unset BAZEL_BIN
